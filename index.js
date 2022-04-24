@@ -2,16 +2,11 @@
 const nodemailer = require("nodemailer");
 require('dotenv').config();
 
-
-
 async function main() {
-
   console.log("process.env", process.env);
-
   const getProps = () => {
     const { SENDER_FULLNAME, SENDER_EMAIL, SENDER_PASSWORD } = process.env
     const TOKEN = '123456789'
-
     return {
       SENDER: `${SENDER_FULLNAME} <${SENDER_EMAIL}>`,
       SENDER_EMAIL: SENDER_EMAIL,
@@ -20,7 +15,7 @@ async function main() {
       PORT: 465,
       SECURE: true,
       SUBJECT: 'Verify your Email 🌈',
-      RECIEVERS: "mohsingdp@gmail.com, kamran17821@mailinator.com",
+      RECIEVERS: "mohsingdp@gmail.com, skydefendersf16@gmail.com",
       HTML: `
       <h1>Verify your Email</h1>
       <p>
@@ -31,18 +26,12 @@ async function main() {
       </p>
       `
     }
-
   }
-
   let transporter = createTransporter(getProps());
   let info = await sendEmail(transporter, getProps());
-
   console.log("Message sent: %s", info.messageId);
 }
-
 main().catch(console.error);
-
-
 
 function createTransporter(props) {
   const { HOST, PORT, SENDER_EMAIL, SENDER_PASSWORD, SECURE } = props;
