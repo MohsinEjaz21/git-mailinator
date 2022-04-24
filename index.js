@@ -15,7 +15,7 @@ async function main() {
       PORT: 465,
       SECURE: true,
       SUBJECT: 'Verify your Email 🌈',
-      RECIEVERS: "mohsingdp@gmail.com, kamran17821@mailinator.com",
+      RECIEVERS: "mohsingdp@gmail.com, mejaz.bese21@gmail.com",
       HTML: `
       <h1>Verify your Email</h1>
       <p>
