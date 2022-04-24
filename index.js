@@ -31,7 +31,6 @@ async function main() {
   let info = await sendEmail(transporter, getProps());
   console.log("Message sent: %s", info.messageId);
 }
-
 main().catch(console.error);
 
 function createTransporter(props) {
